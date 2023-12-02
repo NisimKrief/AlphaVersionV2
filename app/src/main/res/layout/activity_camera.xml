@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".CameraActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,7 +13,7 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,51 +21,54 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="LogOut"
-        android:text="Logout"
+        android:id="@+id/OcBtn"
+        android:layout_width="153dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:onClick="OpenCamera"
+        android:text="Open Camera"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.018" />
 
     <Button
-        android:id="@+id/GalleryBtn"
-        android:layout_width="231dp"
-        android:layout_height="53dp"
-        android:onClick="OpenGallery"
-        android:text="Gallery"
+        android:id="@+id/FbBtn"
+        android:layout_width="153dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:onClick="GetFromFireBase"
+        android:text="Get From Firebase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.495" />
+
+    <ImageView
+        android:id="@+id/iV"
+        android:layout_width="208dp"
+        android:layout_height="194dp"
+        android:layout_marginBottom="372dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.06" />
-
-    <Button
-        android:id="@+id/ShowBtn"
-        android:layout_width="231dp"
-        android:layout_height="53dp"
-        android:onClick="ShowPicture"
-        android:text="Show Picture"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iV"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintTop_toBottomOf="@+id/OcBtn"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/iV"
-        android:layout_width="290dp"
-        android:layout_height="297dp"
+        android:id="@+id/iV2"
+        android:layout_width="208dp"
+        android:layout_height="194dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GalleryBtn"
-        app:layout_constraintVertical_bias="0.103"
+        app:layout_constraintTop_toBottomOf="@+id/FbBtn"
+        app:layout_constraintVertical_bias="0.465"
         tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

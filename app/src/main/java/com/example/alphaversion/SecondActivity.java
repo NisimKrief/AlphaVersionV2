@@ -1,6 +1,8 @@
 package com.example.alphaversion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,6 +11,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -35,6 +39,22 @@ public class SecondActivity extends AppCompatActivity {
         Image = findViewById(R.id.iV);
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.GA)
+            startActivity(new Intent(this, SecondActivity.class));
+        if(id == R.id.CA)
+            startActivity(new Intent(this, CameraActivity.class));
+        return super.onOptionsItemSelected(item);
     }
 
     public void LogOut(View view) {
@@ -80,7 +100,7 @@ public class SecondActivity extends AppCompatActivity {
                 Toast.makeText(SecondActivity.this, "Error converting image", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(SecondActivity.this, "No image selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SecondActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
         }
         }
 
@@ -98,5 +118,6 @@ public class SecondActivity extends AppCompatActivity {
         else
             Toast.makeText(SecondActivity.this, "Couldn't find The Requested Image", Toast.LENGTH_SHORT).show();
     }
+
 
 }
