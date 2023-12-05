@@ -54,6 +54,8 @@ public class SecondActivity extends AppCompatActivity {
             startActivity(new Intent(this, SecondActivity.class));
         if(id == R.id.CA)
             startActivity(new Intent(this, CameraActivity.class));
+        if(id == R.id.DBA)
+            startActivity(new Intent(this, DataBaseActivity.class));
         return super.onOptionsItemSelected(item);
     }
 
