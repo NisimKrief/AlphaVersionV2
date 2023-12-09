@@ -52,6 +52,8 @@ public class DataBaseActivity extends AppCompatActivity {
             startActivity(new Intent(this, CameraActivity.class));
         if(id == R.id.DBA)
             startActivity(new Intent(this, DataBaseActivity.class));
+        if(id == R.id.AA)
+            startActivity(new Intent(this, AlarmActivity.class));
         return super.onOptionsItemSelected(item);
     }
 

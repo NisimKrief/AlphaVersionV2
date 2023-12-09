@@ -12,5 +12,9 @@
         android:id="@+id/DBA"
         android:title="DataBaseActivity"
         android:orderInCategory="300" />
+    <item
+        android:id="@+id/AA"
+        android:title="AlarmActivity"
+        android:orderInCategory="400" />
 
 </menu>
